@@ -1,0 +1,3 @@
+{
+	"dependencies": ["better-console", "url", "./testDir/test-module.js", "os"]
+}

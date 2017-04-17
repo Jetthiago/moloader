@@ -1,0 +1,21 @@
+{
+  "name": "moloader",
+  "version": "3.0.1",
+  "description": "Provides a quicker manner to require dependencies",
+  "main": "moloader.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "module",
+    "loader",
+    "util",
+    "dependencies"
+  ],
+  "author": "Thiago Marques <jetthiago@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "better-console": "^0.2.4",
+    "camelcase": "^4.1.0"
+  }
+}
