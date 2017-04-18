@@ -1,6 +1,6 @@
 {
   "name": "moloader",
-  "version": "3.0.2",
+  "version": "3.0.4",
   "description": "Provides a quicker manner to require dependencies",
   "main": "moloader.js",
   "scripts": {
