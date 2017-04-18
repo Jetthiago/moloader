@@ -67,6 +67,7 @@ var moloader = {
 				if(this.verbose) console.info("Input is a array");
 				this.loadArr(arguments[i]);
 			}
+			// if the arg is a STRING
 			else if(typeof arguments[i] == "string"){
 				if(this.verbose) console.info("Input is a string");
 				this.loadStr(arguments[i]);
@@ -110,8 +111,9 @@ var moloader = {
 			this.fCount();
 		}
 		else{
-			global[string] = require(string);
-			if(this.verbose) console.info(">Module loaded: "+string);
+			var name = getName(string);
+			global[name] = require(string);
+			//if(this.verbose) console.info(">Module loaded: "+string+" return by "+name);
 			this.fCount();
 		}
 		return this;
@@ -188,7 +190,7 @@ var moloader = {
 			if(this.camel) depen[i] = camel(depen[i]);
 			else depen[i] = depen[i].replace(haveMinus,"_");
 			global[depen[i]] = require(depenReq[i]);
-			if(this.verbose) console.info(">Module loaded: "+depen[i]);
+			if(this.verbose) console.info(">Module loaded: "+depenReq[i]+" return by "+depen[i]);
 			this.fCount();
 		}
 		return this;
