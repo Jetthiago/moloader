@@ -22,7 +22,8 @@ var console = require("better-console"),
 	path = require("path"),
 	regxp = {
 		isPath: /\.\//,
-		isJs: /\.js/,
+		isJs: /\.js/i,
+		isJSON: /\.json/i,
 		haveMinus: /\-/g,
 		haveComma: /\,/
 	}
@@ -33,7 +34,8 @@ function getName(name){
 		name = name.replace("./","");
 		name = name.split("/");
 		name = name[name.length - 1];
-		name = name.replace(".js","");
+		name = name.replace(regxp.isJSON,"");
+		name = name.replace(regxp.isJs,"");
 		// camelCase added;
 		if(moloader.camel) name = camel(name);
 		else name = name.replace(haveMinus,"_");
@@ -41,7 +43,8 @@ function getName(name){
 		return name;
 	}
 	else{
-		name = name.replace(".js","");
+		name = name.replace(regxp.isJSON,"");
+		name = name.replace(regxp.isJs,"");
 		// camelCase added;
 		if(moloader.camel) name = camel(name);
 		else name = name.replace(haveMinus,"_");
@@ -141,7 +144,10 @@ var moloader = {
 		// delete the ignore files from the array;
 		if(ignore){
 			if(this.verbose) console.info("Ignoring: "+ignore);
-			ignore = ignore.replace(" ","").split(",");
+
+			ignore = ignore.replace(" ","").split(","); // global?
+
+
 			array = array.toString();
 			for (var i = ignore.length - 1; i >= 0; i--) {
 				array = array.replace(ignore[i],"");
@@ -176,7 +182,10 @@ var moloader = {
 		// delete the ignore files from array
 		if(ignore){
 			if(this.verbose) console.info("Ignoring: "+ignore);
-			ignore = ignore.replace(" ","").split(",");
+
+			ignore = ignore.replace(" ","").split(","); // global?
+
+
 			depen = depen.toString();
 			for (var i = ignore.length - 1; i >= 0; i--) {
 				depen = depen.replace(ignore[i],"");

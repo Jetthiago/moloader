@@ -128,6 +128,9 @@ You can enable verbose by adding:
 - English is not my native language so you may find some writing errors here and there. But if someone wants to help me with this readme I would realy appreciate.
 
 ## Patch Notes
+### Patch 3.0.5
+- Fixed ```.json``` files being associated with wrong names.
+
 ### Major update 3.0.0
 - camelCase added. For backward compatibility the old method can still be acessed by adding at the start:
 ```js
