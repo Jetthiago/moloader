@@ -2,7 +2,7 @@ var moloader = require("./moloader.js");
 moloader.verbose = true;
 moloader.camel = true; // default;
 
-moloader.load("fs, url, ./testDir/test-module.js")
+moloader.load("fs, url, ./testDir/test-module.js, ./package.json")
 		.load("os", "./testDir/test-module.js")
 		.load([{name: "mod", path: "./testDir/test-module.js"}, {name: "fs", path: "fs"}])
 		.load({name: "mod", path: "./testDir/test-module.js"})
@@ -13,13 +13,15 @@ moloader.load("fs, url, ./testDir/test-module.js")
 
 		.loadArr(["http", "os", "./testDir/test-module.js"])
 
-		.loadDir("./testDir", "ignore-me.js")
+		.loadDir("./testDir", "ignore-me.js, ignore-me-global-regex-test.js")
 
 		.loadPack()
 		.loadPack("./testDir/vanillaDependencies.json")
 		.loadPack("./testDir/customDependencies.json");
 
+
 try{
+	package
 	http.server
 	fs.readFile
 	url.parse
