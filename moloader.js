@@ -17,7 +17,7 @@
 */
 
 var console = require("better-console"),
-	camel = require("camelCase"),
+	camel = require("camelcase"),
 	fs = require("fs"),
 	path = require("path"),
 	regxp = {
