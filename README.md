@@ -128,6 +128,10 @@ You can enable verbose by adding:
 - English is not my native language so you may find some writing errors here and there. But if someone wants to help me with this readme I would realy appreciate.
 
 ## Patch Notes
+### Patch 3.0.7
+- Fixed loading a directory with another directory inside it would throw a error
+- Fixed a typo when requiring camelcase
+
 ### Patch 3.0.5
 - Fixed ```.json``` files being associated with wrong names.
 
